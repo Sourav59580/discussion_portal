@@ -1,0 +1,56 @@
+<div class="container d-flex justify-content-center align-items-center shadow-sm p-3">
+    <h2>Discussion Portal</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container p-4 border-right">
+                <div class="d-flex mb-4">
+                    <button class="btn btn-primary text-nowrap que_btn">New Question form</button>
+                    <input type="text" class="form-control ml-3 w-50 filter" placeholder="search questions..">
+                </div>
+                <div class="container-fluid bg-white shadow-sm question-area pt-3">
+                    <% for(var i = questions.length-1;i>=0;i--){ %>
+                        <div class="question_item border-bottom mb-3">
+                            <h5> <%= questions[i].subject %> </h5>
+                            <p> <%= questions[i].question %> </p>
+                        </div>
+                     <% } %>
+                     <div class="question_item border-bottom mb-3">
+                         <h5>Web Development</h5>
+                         <p>What is web?</p>
+                     </div>
+                     <div class="question_item border-bottom mb-3">
+                        <h5>JSON & Web Storage</h5>
+                        <p>How to use web storage</p>
+                    </div>
+                    <div class="question_item border-bottom mb-3">
+                        <h5>Full Stack Development</h5>
+                        <p>Which concept are convered in full stack?</p>
+                    </div>
+                    <div class="no_question_item border-bottom mb-3" style="display: none;">
+                        <h5>No match found</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container p-5 right_form_container">
+                <h4>Welcome to Discussion Portal</h4>
+                <p>Enter a subject and question to get started</p>
+                <form action="/send" method="POST">
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="question">Question</label>
+                        <textarea name="question" class="form-control" placeholder="Question" rows="5" required></textarea>
+                    </div>
+                    <button class="btn btn-danger float-right">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

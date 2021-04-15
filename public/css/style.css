@@ -1,0 +1,18 @@
+textarea:focus, input:focus{
+    outline: none;
+}
+
+h1,h2,h3,h4{
+    font-weight: 400 !important
+}
+h5{
+    font-weight:500 !important ;
+}
+
+.question-area{
+    min-height: 350px;
+}
+
+/* .right_form_container{
+    display: none;
+} */
